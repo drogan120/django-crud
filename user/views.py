@@ -5,6 +5,28 @@ from django.shortcuts import render
 
 def index(request):
     """
-    docstring
+    variable data akan di kirimkan ke view
     """
-    return render(request, 'user/index.html')
+
+    data = {
+        'title': 'User List',
+        'users': [
+            [
+                'Ali Mahmudin',
+                20,
+            ],
+            [
+                'Ollie',
+                18,
+            ],
+            [
+                'Marie',
+                16,
+            ],
+            [
+                'Ann',
+                22,
+            ],
+        ]
+    }
+    return render(request, 'user/index.html', data)
